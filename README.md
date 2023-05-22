@@ -80,7 +80,7 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features
 
-- **[intialize Project.]**
+- **[Initialized project setup with Webpack and Jest library.]**
 
 
 <!-- LIVE DEMO -->
@@ -111,7 +111,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone https://github.com/waelelsafty07/leaderboard.git
+  git clone https://github.com/waelelsafty07/JavaScript-capstone-project.git
 ```
 
 -
