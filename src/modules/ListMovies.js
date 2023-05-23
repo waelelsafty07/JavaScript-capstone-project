@@ -20,6 +20,7 @@ const createTextNode = (tag, text) => {
 
 const createMovies = (movieDetails) => {
   const movie = createElement({ tag: 'div', className: 'movie' });
+  movie.setAttribute('id-movie', movieDetails.id);
   // Create Div with class image-container
   const imageContainer = createElement({
     tag: 'div',
