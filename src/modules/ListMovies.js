@@ -1,10 +1,13 @@
 import API from './api.js';
+import lazyLoadImages from './lazyLoadImage.js';
 
 const createElement = (obj) => {
   const el = document.createElement(obj.tag);
   if (obj.className) el.className = obj.className;
   if (obj.tag === 'img') {
-    el.src = obj.src;
+    el.classList.add('lazy');
+    el.setAttribute('data-src', obj.src);
+    el.alt = 'Lazy-loaded image';
   }
   return el;
 };
@@ -111,6 +114,7 @@ const displayMovies = async () => {
     movies.forEach(async (movie) => {
       moviesList.appendChild(createMovies(movie));
     });
+    lazyLoadImages();
     spinner.style.display = 'none';
     moviesList.style.display = 'flex';
   }
