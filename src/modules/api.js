@@ -19,7 +19,6 @@ class API {
   getData = async (endPoint) => {
     const url = this.url + endPoint;
     const responseJson = await this.fetchData(url, 'GET');
-    console.log(url);
     return responseJson;
   };
 }
