@@ -12,6 +12,7 @@ header {
 li {
   text-decoration: none;
   list-style-type: none;
+  padding: 0.5rem;
 }
 
 .flex-d-column {
@@ -32,6 +33,43 @@ li {
 
 .nav-list {
   gap: 1rem;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-none {
+  display: none;
+}
+
+.popup {
+  padding: 1rem;
+  width: 90%;
+  height: 80%;
+  border: 2px solid black;
+  margin: 2rem auto;
+}
+
+.close {
+  position: relative;
+  left: 45%;
+  margin-top: 1rem;
+}
+
+.show-name {
+  margin: 0 auto;
+}
+
+.details {
+  grid-template-columns: repeat(2, 20rem);
+  justify-items: center;
+  margin: 0 auto;
+}
+
+button {
+  padding: 1rem;
+  margin: 1rem;
 }
 
 footer > span {
