@@ -33,3 +33,11 @@ li {
 .nav-list {
   gap: 1rem;
 }
+
+footer > span {
+  padding: 2rem 1.5rem;
+  position: fixed;
+  bottom: 0;
+  border: 2px solid black;
+  width: 100%;
+}
