@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+}
+
 header {
   margin-top: 2rem;
   gap: 2rem;
@@ -22,22 +26,62 @@ li {
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .justify-content-center {
   justify-content: center;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
 }
 
 .align-items-center {
   align-items: center;
 }
 
+.justify-content-end {
+  justify-content: flex-end;
+}
+
 .nav-list {
   gap: 1rem;
 }
 
+/*
+* Movies List
+*/
+.contient {
+  margin: 3rem 0;
+}
+
+.movies-item {
+  width: 90%;
+}
+
+.movies-item .movie {
+  flex: 0 0 auto;
+  width: 33.333333%;
+  padding: 0.5rem;
+}
+
+.movies-item .movie .image-container .image {
+  width: 100%;
+}
+
+.movies-item .movie .movies-body .movies-title .fa-heart {
+  font-size: 1.3rem;
+}
+
+.movies-item .movie .movies-body .group-btns > div {
+  margin: 1rem 0 0;
+}
+
 footer > span {
   padding: 2rem 1.5rem;
-  position: fixed;
-  bottom: 0;
+  display: block;
   border: 2px solid black;
   width: 100%;
 }
