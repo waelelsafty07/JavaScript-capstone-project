@@ -4,6 +4,36 @@
   box-sizing: border-box;
 }
 
+header {
+  margin-top: 2rem;
+  gap: 2rem;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.flex-d-column {
+  flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.nav-list {
+  gap: 1rem;
+}
+
 footer > span {
   padding: 2rem 1.5rem;
   position: fixed;
