@@ -103,13 +103,17 @@ const displayMovies = async () => {
   const moviesList = document.querySelector('.movies-item');
 
   if (moviesList) {
+    const spinner = document.querySelector('.movies-contient .spinner');
+    spinner.style.display = 'block';
     const api = new API('https://api.tvmaze.com/');
     const movies = await api.getData('shows');
-    movies.forEach((movie) => {
+    moviesList.style.display = 'none';
+    movies.forEach(async (movie) => {
       moviesList.appendChild(createMovies(movie));
     });
+    spinner.style.display = 'none';
+    moviesList.style.display = 'flex';
   }
 };
 
-displayMovies();
-// window.onload = displayMovies;
+window.onload = displayMovies;
