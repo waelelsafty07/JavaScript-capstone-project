@@ -1,5 +1,4 @@
-class Components{
-
+class Components {
   reservationPopUp = (movie) => {
     const app = document.querySelector('.contient');
     const mainContent = document.querySelector('.movies-contient');
@@ -33,10 +32,10 @@ class Components{
 
     const lang = document.createElement('span');
     lang.textContent = `Language: ${movie.language}`;
-  
+
     const country = document.createElement('span');
     country.textContent = `Country: ${movie.network.country.name}`;
-  
+
     const duration = document.createElement('span');
     duration.textContent = `Duration: ${movie.runtime}`;
 
@@ -63,7 +62,7 @@ class Components{
     popUpDiv.appendChild(summary);
     popUpDiv.appendChild(movieInfo);
     app.appendChild(popUpDiv);
-  
+
     mainContent.classList.toggle('contient-in-backgound');
     return app;
   };

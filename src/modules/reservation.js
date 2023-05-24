@@ -3,8 +3,7 @@ import API from './api';
 
 const API_URL = 'https://api.tvmaze.com/shows/';
 
-class Reservation{
-
+class Reservation {
   loadReservation = async (event) => {
     const api = new API(API_URL);
     const movie = await api.getData(event.target.value);
@@ -16,13 +15,13 @@ class Reservation{
     components.closeReservationPopUp();
   };
 
-  createReservation = (movieId) => {  // eslint-disable no-unused-vars
+  createReservation = () => {
   };
 
   reservationButtonEventListner = () => {
     const reservations = document.querySelectorAll('.btn-reservation');
 
-    reservations.forEach(reservationButton => {
+    reservations.forEach((reservationButton) => {
       reservationButton.addEventListener('click', this.loadReservation);
     });
   };
