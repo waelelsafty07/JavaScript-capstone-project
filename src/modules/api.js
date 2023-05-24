@@ -1,15 +1,32 @@
-const home = document.querySelector('.home');
-
-export default class TVmazeAPI {
-  constructor() {
-    this.url = 'https://api.tvmaze.com/shows';
+class API {
+  constructor(link) {
+    this.url = link;
   }
 
-  async displayShow(itemId) {
-    const response = await fetch(this.url);
-    const data = await response.json();
+  fetchData = async (url, method, body) => {
+    const options = {};
+    if (method === 'GET') {
+      options.method = 'GET';
+    } else if (method === 'POST') {
+      options.method = 'POST';
+      options.body = body;
+    }
+    const response = await fetch(url, options);
+    const responseData = await response.json();
+    return responseData;
+  };
 
-    const item = data.find((item) => item.id === itemId);
+  getData = async (endPoint) => {
+    const url = this.url + endPoint;
+    const responseJson = await this.fetchData(url, 'GET');
+    return responseJson;
+  };
+
+  displayShow = async (itemId) => {
+
+    const apiUrl = `https://api.tvmaze.com/shows/${itemId}`;
+    const response = await fetch(apiUrl);
+    const item = await response.json();
 
     const popupDiv = document.createElement('div');
 
@@ -23,6 +40,9 @@ export default class TVmazeAPI {
       const popupDet2 = document.createElement('li');
       const popupDet3 = document.createElement('li');
       const popupDet4 = document.createElement('li');
+      const overlay = document.createElement('div');
+      overlay.classList.add('overlay');
+      document.body.appendChild(overlay);
 
       popupImg.src = item.image.medium;
 
@@ -44,9 +64,10 @@ export default class TVmazeAPI {
 
       close.addEventListener('click', () => {
         popupDiv.classList.add('d-none');
+        overlay.classList.remove('overlay');
       });
 
-      home.appendChild(popupDiv);
+      document.body.appendChild(popupDiv);
 
       popupDiv.appendChild(close);
       popupDiv.appendChild(popupImgDiv);
@@ -62,3 +83,5 @@ export default class TVmazeAPI {
     return popupDiv;
   }
 }
+
+export default API;
