@@ -13,6 +13,12 @@ class LIKES {
     const res = await this.likesAPI.postData('likes', body);
     return res;
   }
+
+  async getlikes() {
+    const likes = await this.likesAPI.getData('likes');
+    const likesArray = Array.isArray(likes) ? likes : [];
+    return likesArray;
+  }
 }
 
 export default LIKES;
