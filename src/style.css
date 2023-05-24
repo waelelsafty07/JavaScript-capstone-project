@@ -39,6 +39,7 @@ header {
 li {
   text-decoration: none;
   list-style-type: none;
+  padding: 0.5rem;
 }
 
 .flex-d-column {
@@ -100,6 +101,59 @@ li {
 
 .movies-item .movie .movies-body .group-btns > div {
   margin: 1rem 0 0;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.d-none {
+  display: none;
+}
+
+.popup {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+  padding: 1rem;
+  width: 90%;
+  height: 80%;
+  border: 2px solid black;
+  background-color: #fff;
+  margin: 2rem auto;
+  z-index: 5;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.301);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.close {
+  position: relative;
+  left: 45%;
+  margin-top: 1rem;
+}
+
+.show-name {
+  margin: 0 auto;
+}
+
+.details {
+  grid-template-columns: repeat(2, 20rem);
+  justify-items: center;
+  margin: 0 auto;
+}
+
+button {
+  padding: 1rem;
+  margin: 1rem;
 }
 
 footer > span {
