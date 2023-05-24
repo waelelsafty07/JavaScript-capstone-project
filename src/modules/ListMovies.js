@@ -117,10 +117,9 @@ const CommentPopup = (event) => {
   if (currentPopup) {
     currentPopup.classList.add('d-none');
   }
-  api.displayShow(parseInt(movieId, 10))
-    .then((popupDiv) => {
-      currentPopup = popupDiv;
-    });
+  api.displayShow(parseInt(movieId, 10)).then((popupDiv) => {
+    currentPopup = popupDiv;
+  });
 };
 
 const displayMovies = async () => {
@@ -136,11 +135,10 @@ const displayMovies = async () => {
     const likesArray = await Likes.getlikes();
 
     movies.forEach(async (movie) => {
-      const movieElement = createMovies(movie);
+      const movieElement = createMovies(movie, likesArray);
       const commentButton = movieElement.querySelector('.btn-comment');
       commentButton.addEventListener('click', CommentPopup);
       moviesList.appendChild(movieElement);
-
     });
     lazyLoadImages();
     spinner.style.display = 'none';
