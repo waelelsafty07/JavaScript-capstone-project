@@ -47,12 +47,19 @@ const createMovies = (movieDetails) => {
   });
   const h2 = createElement({ tag: 'h1' });
   createTextNode(h2, movieDetails.name);
+  const iconbutton = createElement({
+    tag: 'a',
+    className: 'btn btn-like',
+  });
+  iconbutton.setAttribute('id-movie', movieDetails.id);
+
   const iconHeart = createElement({
     tag: 'i',
     className: 'fa-regular fa-heart',
   });
   movieTitle.appendChild(h2);
-  movieTitle.appendChild(iconHeart);
+  iconbutton.appendChild(iconHeart);
+  movieTitle.appendChild(iconbutton);
   movieBody.appendChild(movieTitle);
 
   // create div with class likes
@@ -121,4 +128,4 @@ const displayMovies = async () => {
   }
 };
 
-window.onload = displayMovies;
+export default displayMovies;

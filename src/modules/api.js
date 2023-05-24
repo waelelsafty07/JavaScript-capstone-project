@@ -9,17 +9,26 @@ class API {
       options.method = 'GET';
     } else if (method === 'POST') {
       options.method = 'POST';
-      options.body = body;
+      options.headers = {
+        'Content-Type': 'application/json',
+      };
+      options.body = JSON.stringify(body);
     }
     const response = await fetch(url, options);
-    const responseData = await response.json();
-    return responseData;
+    return response;
+  };
+
+  postData = async (endPoint, body) => {
+    const url = this.url + endPoint;
+    const resp = await this.fetchData(url, 'POST', body);
+    return resp;
   };
 
   getData = async (endPoint) => {
     const url = this.url + endPoint;
     const responseJson = await this.fetchData(url, 'GET');
-    return responseJson;
+    const data = await responseJson.json();
+    return data;
   };
 }
 
