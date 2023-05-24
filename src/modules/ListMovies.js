@@ -110,13 +110,13 @@ const CommentPopup = (event) => {
   // Perform the desired action when the comment button is clicked
   const api = new API('https://api.tvmaze.com/shows');
   let currentPopup = null;
-      if (currentPopup) {
-      currentPopup.classList.add('d-none');
-    }
+  if (currentPopup) {
+    currentPopup.classList.add('d-none');
+  }
   api.displayShow(parseInt(movieId, 10))
-  .then((popupDiv) => {
-          currentPopup = popupDiv;
-        });
+    .then((popupDiv) => {
+      currentPopup = popupDiv;
+    });
 };
 
 const displayMovies = async () => {
@@ -133,7 +133,6 @@ const displayMovies = async () => {
       const commentButton = movieElement.querySelector('.btn-comment');
       commentButton.addEventListener('click', CommentPopup);
       moviesList.appendChild(movieElement);
-
     });
     lazyLoadImages();
     spinner.style.display = 'none';
