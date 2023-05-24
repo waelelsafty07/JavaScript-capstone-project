@@ -1,5 +1,8 @@
 import API from './api.js';
+import displayLikes from './displayLike.js';
+import { movieApi } from './env.js';
 import lazyLoadImages from './lazyLoadImage.js';
+import LIKES from './Likes.js';
 
 const createElement = (obj) => {
   const el = document.createElement(obj.tag);
@@ -18,7 +21,7 @@ const createTextNode = (tag, text) => {
   return tag;
 };
 
-const createMovies = (movieDetails) => {
+const createMovies = (movieDetails, likesArray) => {
   const movie = createElement({ tag: 'div', className: 'movie' });
   movie.setAttribute('id-movie', movieDetails.id);
   // Create Div with class image-container
@@ -63,8 +66,9 @@ const createMovies = (movieDetails) => {
   const spanLikes = createElement({
     tag: 'span',
   });
-
-  createTextNode(spanLikes, '5 likes');
+  const likeText = displayLikes(likesArray, movieDetails.id);
+  const likeCount = likeText.length !== 0 ? likeText : 0;
+  createTextNode(spanLikes, `${likeCount} likes`);
   likes.appendChild(spanLikes);
   movieBody.appendChild(likes);
   // create div with class Group buttons
@@ -109,11 +113,14 @@ const displayMovies = async () => {
   if (moviesList) {
     const spinner = document.querySelector('.movies-contient .spinner');
     spinner.style.display = 'block';
-    const api = new API('https://api.tvmaze.com/');
+    const api = new API(movieApi);
     const movies = await api.getData('shows');
     moviesList.style.display = 'none';
+    const Likes = new LIKES();
+    const likesArray = await Likes.getlikes();
+
     movies.forEach(async (movie) => {
-      moviesList.appendChild(createMovies(movie));
+      moviesList.appendChild(createMovies(movie, likesArray));
     });
     lazyLoadImages();
     spinner.style.display = 'none';
