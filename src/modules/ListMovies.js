@@ -133,6 +133,7 @@ const displayMovies = async () => {
       const commentButton = movieElement.querySelector('.btn-comment');
       commentButton.addEventListener('click', CommentPopup);
       moviesList.appendChild(movieElement);
+
     });
     lazyLoadImages();
     spinner.style.display = 'none';

@@ -21,7 +21,7 @@ class API {
     const responseJson = await this.fetchData(url, 'GET');
     return responseJson;
   };
-
+  
   displayShow = async (itemId) => {
 
     const apiUrl = `https://api.tvmaze.com/shows/${itemId}`;
@@ -82,6 +82,7 @@ class API {
     }
     return popupDiv;
   }
+
 }
 
 export default API;
