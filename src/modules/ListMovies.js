@@ -107,6 +107,22 @@ const createMovies = (movieDetails, likesArray) => {
   return movie;
 };
 
+const CommentPopup = (event) => {
+  const commentButton = event.target;
+  const movie = commentButton.closest('.movie');
+  const movieId = movie.getAttribute('id-movie');
+  // Perform the desired action when the comment button is clicked
+  const api = new API('https://api.tvmaze.com/shows');
+  let currentPopup = null;
+  if (currentPopup) {
+    currentPopup.classList.add('d-none');
+  }
+  api.displayShow(parseInt(movieId, 10))
+    .then((popupDiv) => {
+      currentPopup = popupDiv;
+    });
+};
+
 const displayMovies = async () => {
   const moviesList = document.querySelector('.movies-item');
 
@@ -120,7 +136,11 @@ const displayMovies = async () => {
     const likesArray = await Likes.getlikes();
 
     movies.forEach(async (movie) => {
-      moviesList.appendChild(createMovies(movie, likesArray));
+      const movieElement = createMovies(movie);
+      const commentButton = movieElement.querySelector('.btn-comment');
+      commentButton.addEventListener('click', CommentPopup);
+      moviesList.appendChild(movieElement);
+
     });
     lazyLoadImages();
     spinner.style.display = 'none';
