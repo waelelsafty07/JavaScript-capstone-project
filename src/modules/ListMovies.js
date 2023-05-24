@@ -1,5 +1,6 @@
 import API from './api.js';
 import lazyLoadImages from './lazyLoadImage.js';
+import reservation from './reservation.js';
 
 const createElement = (obj) => {
   const el = document.createElement(obj.tag);
@@ -93,6 +94,7 @@ const createMovies = (movieDetails) => {
     className: 'btn btn-reservation',
   });
   createTextNode(reservationButton, 'reservation');
+  reservationButton.setAttribute('value', movieDetails.id);
 
   reservationDiv.appendChild(reservationButton);
   groupBtns.appendChild(reservationDiv);
@@ -114,6 +116,7 @@ const displayMovies = async () => {
     moviesList.style.display = 'none';
     movies.forEach(async (movie) => {
       moviesList.appendChild(createMovies(movie));
+      reservation.reservationButtonEventListner();
     });
     lazyLoadImages();
     spinner.style.display = 'none';
