@@ -3,7 +3,7 @@ import API from './api';
 
 const API_URL = 'https://api.tvmaze.com/shows/';
 
-class Reservation {
+class Reservation{
 
   loadReservation = async (event) => {
     const api = new API(API_URL);
@@ -16,8 +16,7 @@ class Reservation {
     components.closeReservationPopUp();
   };
 
-  createReservation = (movieId) => { 
-    console.log('good');
+  createReservation = (movieId) => {  // eslint-disable no-unused-vars
   };
 
   reservationButtonEventListner = () => {
