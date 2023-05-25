@@ -77,16 +77,21 @@ class API {
       popupDiv.classList.add('popup');
       comments.classList.add('d-flex', 'flex-d-column');
       commentForm.classList.add('d-flex', 'flex-d-column');
+      commentBtn.className = 'comment-btn';
 
       commentsTitle.textContent = 'Comments';
       addCommentsTitle.textContent = 'Add Comment';
       commentBtn.textContent = 'Comment';
 
+      commentsTitle.id = 'comments-title';
       commentsSection.id = 'comments-section';
       commentForm.id = 'comment-form';
       commentName.id = 'comment-name';
       commentMsg.id = 'comment-message';
       commentBtn.id = itemId;
+
+      commentName.setAttribute('required', 'true');
+      commentMsg.setAttribute('required', 'true');
 
       commentName.placeholder = 'Your Name';
       commentMsg.placeholder = 'Your Comment';
