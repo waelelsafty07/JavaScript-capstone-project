@@ -1,9 +1,13 @@
+import API from './api';
+import { invo } from './env';
+
 class Components {
   reservationPopUp = (movie) => {
     const app = document.querySelector('.contient');
     const mainContent = document.querySelector('.movies-contient');
     const popUpDiv = document.createElement('div');
     popUpDiv.className = 'reservation-div';
+    popUpDiv.setAttribute('movieId', movie.id);
 
     const popUpHead = document.createElement('div');
     popUpHead.className = 'pop-up-head';
@@ -63,6 +67,7 @@ class Components {
     popUpDiv.appendChild(movieInfo);
     popUpDiv.appendChild(this.createReservarionFrom());
     app.appendChild(popUpDiv);
+    this.paintReservations(movie.id);
 
     mainContent.classList.toggle('contient-in-backgound');
     return app;
@@ -82,11 +87,19 @@ class Components {
     nameInput.className = 'name-input';
     nameInput.placeholder = 'Your name';
     nameInput.type = 'text';
+    nameInput.setAttribute('required', true);
 
     const dateInput = document.createElement('input');
-    dateInput.className = 'date-input';
+    dateInput.className = 'date-input start-date';
     dateInput.placeholder = 'Start Date';
     dateInput.type = 'date';
+    dateInput.setAttribute('required', true);
+
+    const dateInputEnd = document.createElement('input');
+    dateInputEnd.className = 'date-input end-date';
+    dateInputEnd.placeholder = 'End Date';
+    dateInputEnd.type = 'date';
+    dateInputEnd.setAttribute('required', true);
 
     const submitButton = document.createElement('button');
     submitButton.className = 'submit-input';
@@ -94,6 +107,7 @@ class Components {
 
     form.appendChild(nameInput);
     form.appendChild(dateInput);
+    form.appendChild(dateInputEnd);
     form.appendChild(submitButton);
     reservationFormDiv.appendChild(formTitle);
     reservationFormDiv.appendChild(form);
@@ -107,6 +121,51 @@ class Components {
     mainContent.classList.toggle('contient-in-backgound');
     popUpDiv.remove();
   };
+
+  reservations = (reservationArray = null) => {
+    const div = document.createElement('div');
+    div.className = 'reservations-div'
+    const title = document.createElement('h2');
+    title.className = 'reservation-title';
+    title.innerHTML = `Reservations (${this.getReservationCount(reservationArray)})`;
+
+    div.appendChild(title);
+    if (reservationArray.error) {
+      return div;
+    }
+
+    if (document.querySelector('.reservations-div')) {
+      document.querySelector('.reservations-div').remove();
+    }
+
+    const ul = document.createElement('ul');
+    reservationArray.reverse().forEach((reservation) => {
+      const li = document.createElement('li');
+      li.textContent = `${reservation.date_start} - ${reservation.date_end} by ${reservation.username}`;
+      ul.appendChild(li);
+    });
+    div.appendChild(ul);
+
+    return div;
+  };
+
+  paintReservations = (id) => {
+    const popUpDiv = document.querySelector('.reservation-div');
+    const api = new API(`${invo}reservations`);
+
+    api.getData(`?item_id=${id}`)
+      .then((results) => {
+        popUpDiv.appendChild(this.reservations(results));
+      })
+      .catch((error) => {
+        throw error;
+      });
+  };
+
+  getReservationCount = (resulvations) => {
+    const TotalItems = (Array.isArray(resulvations) ? resulvations.length : '0');
+    return TotalItems;
+  }
 }
 
 export default new Components();
