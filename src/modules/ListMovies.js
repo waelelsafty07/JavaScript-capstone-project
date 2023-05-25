@@ -2,6 +2,7 @@ import API from './api.js';
 import displayLikes from './displayLike.js';
 import { movieApi } from './env.js';
 import lazyLoadImages from './lazyLoadImage.js';
+import reservation from './reservation.js';
 import LIKES from './Likes.js';
 
 const createElement = (obj) => {
@@ -97,6 +98,7 @@ const createMovies = (movieDetails, likesArray) => {
     className: 'btn btn-reservation',
   });
   createTextNode(reservationButton, 'reservation');
+  reservationButton.setAttribute('value', movieDetails.id);
 
   reservationDiv.appendChild(reservationButton);
   groupBtns.appendChild(reservationDiv);
@@ -135,6 +137,8 @@ const displayMovies = async () => {
     const likesArray = await Likes.getlikes();
 
     movies.forEach(async (movie) => {
+      moviesList.appendChild(createMovies(movie));
+      reservation.reservationButtonEventListner();
       const movieElement = createMovies(movie, likesArray);
       const commentButton = movieElement.querySelector('.btn-comment');
       commentButton.addEventListener('click', CommentPopup);
