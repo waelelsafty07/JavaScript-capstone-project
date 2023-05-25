@@ -21,6 +21,7 @@ class API {
     return response;
   };
 
+
   postData = async (endPoint, body) => {
     const url = this.url + endPoint;
     const responseJson = await this.fetchData(url, 'POST', body);
@@ -30,7 +31,8 @@ class API {
   getData = async (endPoint) => {
     const url = this.url + endPoint;
     const responseJson = await this.fetchData(url, 'GET');
-    return responseJson;
+    const data = await responseJson.json();
+    return data;
   };
 
   displayShow = async (itemId) => {

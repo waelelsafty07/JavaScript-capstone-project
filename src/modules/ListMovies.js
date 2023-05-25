@@ -135,7 +135,6 @@ const diplayCountItem = (moviesList, likesArray) => {
   createTextNode(counterDiv, `${countItem} movie`);
 
   moviesList.insertBefore(counterDiv, moviesList.firstChild);
-
 };
 
 const displayMovies = async () => {
