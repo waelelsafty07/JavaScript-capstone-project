@@ -1,4 +1,4 @@
-import totalComments from "../totalComments.js";
+import totalComments from '../totalComments.js';
 
 describe('Total Comments', () => {
   test('should return a number', () => {
@@ -28,11 +28,10 @@ describe('Total Comments', () => {
   test('should be 1000000', () => {
     const array = [];
 
-    for(let i = 0;i<1000000;i++){
+    for (let i = 0; i < 1000000; i += 1) {
       array.push(i);
     }
     const res = totalComments(array);
     expect(res).toBe(1000000);
   });
-})
-
+});
