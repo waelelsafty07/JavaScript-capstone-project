@@ -1,5 +1,5 @@
-import components from './components';
-import API from './api';
+import components from './components.js';
+import API from './api.js';
 
 const API_URL = 'https://api.tvmaze.com/shows/';
 
