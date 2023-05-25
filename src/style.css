@@ -164,9 +164,9 @@ footer > span {
 }
 
 .reservation-div {
-  display: flex;
+  display: block;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   background: #ffff;
   top: 0;
@@ -175,6 +175,9 @@ footer > span {
   margin: 5%;
   padding: 2%;
   width: 60%;
+  overflow: initial;
+  overflow-y: scroll;
+  height: 80%;
 }
 
 .pop-up-head {
@@ -225,4 +228,38 @@ footer > span {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.reservation-form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 30%;
+}
+
+.submit-input {
+  padding: 1rem;
+  border: 1px black solid;
+  text-align: center;
+  margin: 0;
+  background-color: #ffff;
+}
+
+.submit-input:hover {
+  border: 1px solid rgb(75, 75, 228);
+  background-color: rgb(75, 75, 228);
+  color: white;
+  font-weight: 600;
+}
+
+.name-input,
+.date-input {
+  padding: 0.5rem;
 }
