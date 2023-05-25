@@ -1,5 +1,5 @@
-import AddComment from "./AddCommentToMovie";
-import displayComments from "./displayComments.js";
+/* eslint-disable import/no-cycle */
+import displayComments from './displayComments.js';
 
 class API {
   constructor(link) {
@@ -76,14 +76,14 @@ class API {
       popupDetails.classList.add('details');
       popupDiv.classList.add('popup');
       comments.classList.add('d-flex', 'flex-d-column');
-      commentForm.classList.add('d-flex', 'flex-d-column')
+      commentForm.classList.add('d-flex', 'flex-d-column');
 
       commentsTitle.textContent = 'Comments';
-      addCommentsTitle.textContent = 'Add Comment'
+      addCommentsTitle.textContent = 'Add Comment';
       commentBtn.textContent = 'Comment';
 
       commentsSection.id = 'comments-section';
-      commentForm.id = 'comment-form'
+      commentForm.id = 'comment-form';
       commentName.id = 'comment-name';
       commentMsg.id = 'comment-message';
       commentBtn.id = itemId;

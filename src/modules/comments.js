@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import API from './api.js';
 import { invo } from './env.js';
 
@@ -12,7 +13,7 @@ class Comments {
   }
 
   async getComments(itemId) {
-    const comments = await this.commentsAPI.getData('comments?item_id=' +itemId);
+    const comments = await this.commentsAPI.getData(`comments?item_id=${itemId}`);
     const commentsArray = Array.isArray(comments) ? comments : [];
     return commentsArray;
   }

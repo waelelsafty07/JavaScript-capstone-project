@@ -1,25 +1,19 @@
-import Comments from "./comments";
+/* eslint-disable import/no-cycle */
+import Comments from './comments.js';
 
 const displayComments = (itemId) => {
-
   const commentsSection = document.querySelector('#comments-section');
-  if(commentsSection){
-
+  if (commentsSection) {
     const CommentAPI = new Comments();
-      const body ={
-        item_id: itemId
-      }
-      CommentAPI.getComments(itemId).then((data) => {
-    data.forEach((d) => {
 
-      const commentLi = document.createElement('li')
-      commentLi.textContent = `${d.creation_date} ${d.username}: ${d.comment}`
-      commentsSection.appendChild(commentLi);
-    })      
-  })
-
+    CommentAPI.getComments(itemId).then((data) => {
+      data.forEach((d) => {
+        const commentLi = document.createElement('li');
+        commentLi.textContent = `${d.creation_date} ${d.username}: ${d.comment}`;
+        commentsSection.appendChild(commentLi);
+      });
+    });
   }
-  
-}
+};
 
 export default displayComments;

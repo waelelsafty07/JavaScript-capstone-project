@@ -104,14 +104,14 @@ const createMovies = (movieDetails) => {
   return movie;
 };
 
-const CommentPopup = async(event) => {
+const CommentPopup = async (event) => {
   const commentButton = event.target;
   const movie = commentButton.closest('.movie');
   const movieId = movie.getAttribute('id-movie');
   // Perform the desired action when the comment button is clicked
   const api = new API('https://api.tvmaze.com/shows');
   await api.displayShow(parseInt(movieId, 10));
-  AddComment()
+  AddComment();
 };
 
 const displayMovies = async () => {
@@ -135,7 +135,6 @@ const displayMovies = async () => {
   }
 };
 
-window.onload =async ()=>{
-  await displayMovies()
-  
+window.onload = async () => {
+  await displayMovies();
 };
