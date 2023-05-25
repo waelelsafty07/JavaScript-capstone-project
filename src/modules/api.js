@@ -1,3 +1,6 @@
+import AddComment from "./AddCommentToMovie";
+import displayComments from "./displayComments.js";
+
 class API {
   constructor(link) {
     this.url = link;
@@ -9,17 +12,26 @@ class API {
       options.method = 'GET';
     } else if (method === 'POST') {
       options.method = 'POST';
-      options.body = body;
+      options.headers = {
+        'Content-Type': 'application/json',
+      };
+      options.body = JSON.stringify(body);
     }
     const response = await fetch(url, options);
-    const responseData = await response.json();
-    return responseData;
+    return response;
+  };
+
+  postData = async (endPoint, body) => {
+    const url = this.url + endPoint;
+    const responseJson = await this.fetchData(url, 'POST', body);
+    return responseJson;
   };
 
   getData = async (endPoint) => {
     const url = this.url + endPoint;
     const responseJson = await this.fetchData(url, 'GET');
-    return responseJson;
+    const data = await responseJson.json();
+    return data;
   };
 
   displayShow = async (itemId) => {
@@ -43,6 +55,11 @@ class API {
       const comments = document.createElement('div');
       const commentsTitle = document.createElement('h3');
       const commentsSection = document.createElement('ul');
+      const addCommentsTitle = document.createElement('h3');
+      const commentForm = document.createElement('form');
+      const commentName = document.createElement('input');
+      const commentMsg = document.createElement('textarea');
+      const commentBtn = document.createElement('button');
 
       document.body.appendChild(overlay);
 
@@ -58,9 +75,21 @@ class API {
       popupDetails.classList.add('d-grid');
       popupDetails.classList.add('details');
       popupDiv.classList.add('popup');
+      comments.classList.add('d-flex', 'flex-d-column');
+      commentForm.classList.add('d-flex', 'flex-d-column')
 
       commentsTitle.textContent = 'Comments';
-      commentsSection.textContent = 'Comments go here';
+      addCommentsTitle.textContent = 'Add Comment'
+      commentBtn.textContent = 'Comment';
+
+      commentsSection.id = 'comments-section';
+      commentForm.id = 'comment-form'
+      commentName.id = 'comment-name';
+      commentMsg.id = 'comment-message';
+      commentBtn.id = itemId;
+
+      commentName.placeholder = 'Your Name';
+      commentMsg.placeholder = 'Your Comment';
       popupName.textContent = item.name;
       popupDet1.textContent = `Genre: ${item.genres}`;
       popupDet2.textContent = `Rating: ${item.rating.average}`;
@@ -68,8 +97,8 @@ class API {
       popupDet4.textContent = `Runtime: ${item.runtime} min`;
 
       close.addEventListener('click', () => {
-        popupDiv.classList.add('d-none');
         overlay.classList.remove('overlay');
+        document.body.removeChild(popupDiv);
       });
 
       document.body.appendChild(popupDiv);
@@ -87,6 +116,13 @@ class API {
       popupDiv.appendChild(comments);
       comments.appendChild(commentsTitle);
       comments.appendChild(commentsSection);
+      comments.appendChild(addCommentsTitle);
+      comments.appendChild(commentForm);
+      commentForm.appendChild(commentName);
+      commentForm.appendChild(commentMsg);
+      commentForm.appendChild(commentBtn);
+
+      displayComments(itemId);
     }
     return popupDiv;
   }
