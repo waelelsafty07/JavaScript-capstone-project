@@ -1,5 +1,6 @@
 import API from './api';
 import { invo } from './env';
+import reservationCounter from './reservationCounter';
 
 class Components {
   reservationPopUp = (movie) => {
@@ -141,8 +142,11 @@ class Components {
     const ul = document.createElement('ul');
     reservationArray.reverse().forEach((reservation) => {
       const li = document.createElement('li');
+      li.className = 'reservation-item';
+
       const startDate = new Date(reservation.date_start);
       const endDate = new Date(reservation.date_end);
+      
       li.textContent = `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} 
         - ${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} by ${reservation.username}`;
       ul.appendChild(li);
