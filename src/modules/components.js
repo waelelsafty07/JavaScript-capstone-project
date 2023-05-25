@@ -147,8 +147,8 @@ class Components {
       const startDate = new Date(reservation.date_start);
       const endDate = new Date(reservation.date_end);
 
-      li.textContent = `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} 
-        - ${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} by ${reservation.username}`;
+      li.textContent = `${startDate.getMonth() + 1}/${startDate.getDate()}/${startDate.getFullYear()} 
+        - ${endDate.getMonth() + 1}/${endDate.getDate()}/${endDate.getFullYear()} by ${reservation.username}`;
       ul.appendChild(li);
     });
     div.appendChild(ul);
