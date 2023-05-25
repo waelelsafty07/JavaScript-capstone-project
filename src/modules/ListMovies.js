@@ -164,4 +164,4 @@ const displayMovies = async () => {
   }
 };
 
-export default displayMovies
+export default displayMovies;

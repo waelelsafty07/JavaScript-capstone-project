@@ -21,7 +21,6 @@ class API {
     return response;
   };
 
-
   postData = async (endPoint, body) => {
     const url = this.url + endPoint;
     const responseJson = await this.fetchData(url, 'POST', body);
