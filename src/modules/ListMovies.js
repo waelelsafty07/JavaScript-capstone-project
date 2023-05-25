@@ -1,3 +1,4 @@
+import AddComment from './AddCommentToMovie.js';
 import API from './api.js';
 import displayLikes from './displayLike.js';
 import { movieApi } from './env.js';
@@ -117,19 +118,15 @@ const createMovies = (movieDetails, likesArray) => {
   return movie;
 };
 
-const CommentPopup = (event) => {
+const CommentPopup = async (event) => {
   const commentButton = event.target;
   const movie = commentButton.closest('.movie');
   const movieId = movie.getAttribute('id-movie');
   // Perform the desired action when the comment button is clicked
   const api = new API('https://api.tvmaze.com/shows');
-  let currentPopup = null;
-  if (currentPopup) {
-    currentPopup.classList.add('d-none');
-  }
-  api.displayShow(parseInt(movieId, 10)).then((popupDiv) => {
-    currentPopup = popupDiv;
-  });
+
+  await api.displayShow(parseInt(movieId, 10));
+  AddComment();
 };
 
 const diplayCountItem = (moviesList, likesArray) => {
@@ -154,7 +151,6 @@ const displayMovies = async () => {
     const likesArray = await Likes.getlikes();
     diplayCountItem(moviesList.parentNode, movies);
     movies.forEach(async (movie) => {
-      moviesList.appendChild(createMovies(movie));
       reservation.reservationButtonEventListner();
       const movieElement = createMovies(movie, likesArray);
       const commentButton = movieElement.querySelector('.btn-comment');
