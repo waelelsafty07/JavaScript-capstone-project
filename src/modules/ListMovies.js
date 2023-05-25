@@ -2,7 +2,9 @@ import API from './api.js';
 import displayLikes from './displayLike.js';
 import { movieApi } from './env.js';
 import lazyLoadImages from './lazyLoadImage.js';
+import reservation from './reservation.js';
 import LIKES from './Likes.js';
+import TotalItems from './totalItems.js';
 
 const createElement = (obj) => {
   const el = document.createElement(obj.tag);
@@ -104,6 +106,7 @@ const createMovies = (movieDetails, likesArray) => {
     className: 'btn btn-reservation',
   });
   createTextNode(reservationButton, 'reservation');
+  reservationButton.setAttribute('value', movieDetails.id);
 
   reservationDiv.appendChild(reservationButton);
   groupBtns.appendChild(reservationDiv);
@@ -129,24 +132,36 @@ const CommentPopup = (event) => {
   });
 };
 
+const diplayCountItem = (moviesList, likesArray) => {
+  const countItem = TotalItems(likesArray);
+  const counterDiv = createElement({ tag: 'div', className: 'counter' });
+  createTextNode(counterDiv, `${countItem} movie`);
+
+  moviesList.insertBefore(counterDiv, moviesList.firstChild);
+};
+
 const displayMovies = async () => {
   const moviesList = document.querySelector('.movies-item');
 
   if (moviesList) {
     const spinner = document.querySelector('.movies-contient .spinner');
+
     spinner.style.display = 'block';
     const api = new API(movieApi);
     const movies = await api.getData('shows');
     moviesList.style.display = 'none';
     const Likes = new LIKES();
     const likesArray = await Likes.getlikes();
-
+    diplayCountItem(moviesList.parentNode, movies);
     movies.forEach(async (movie) => {
+      moviesList.appendChild(createMovies(movie));
+      reservation.reservationButtonEventListner();
       const movieElement = createMovies(movie, likesArray);
       const commentButton = movieElement.querySelector('.btn-comment');
       commentButton.addEventListener('click', CommentPopup);
       moviesList.appendChild(movieElement);
     });
+
     lazyLoadImages();
     spinner.style.display = 'none';
     moviesList.style.display = 'flex';
