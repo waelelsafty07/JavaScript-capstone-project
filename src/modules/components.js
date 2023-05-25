@@ -61,10 +61,43 @@ class Components {
     popUpDiv.appendChild(title);
     popUpDiv.appendChild(summary);
     popUpDiv.appendChild(movieInfo);
+    popUpDiv.appendChild(this.createReservarionFrom());
     app.appendChild(popUpDiv);
 
     mainContent.classList.toggle('contient-in-backgound');
     return app;
+  };
+
+  createReservarionFrom = () => {
+    const reservationFormDiv = document.createElement('div');
+    reservationFormDiv.className = 'reservation-form-div';
+
+    const formTitle = document.createElement('h1');
+    formTitle.textContent = 'Add a reservation';
+
+    const form = document.createElement('form');
+    form.className = 'reservation-form';
+
+    const nameInput = document.createElement('input');
+    nameInput.className = 'name-input';
+    nameInput.placeholder = 'Your name';
+    nameInput.type = 'text';
+
+    const dateInput = document.createElement('input');
+    dateInput.className = 'date-input';
+    dateInput.placeholder = 'Start Date';
+    dateInput.type = 'date';
+
+    const submitButton = document.createElement('button');
+    submitButton.className = 'submit-input';
+    submitButton.textContent = 'Submit';
+
+    form.appendChild(nameInput);
+    form.appendChild(dateInput);
+    form.appendChild(submitButton);
+    reservationFormDiv.appendChild(formTitle);
+    reservationFormDiv.appendChild(form);
+    return reservationFormDiv;
   };
 
   closeReservationPopUp = () => {
