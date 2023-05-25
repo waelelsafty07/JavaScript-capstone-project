@@ -4,8 +4,8 @@ import totalComments from './totalComments.js';
 
 const displayComments = (itemId) => {
   const commentsSection = document.querySelector('#comments-section');
+  commentsSection.textContent = '';
   const commentsTitle = document.querySelector('#comments-title');
-
   if (commentsSection) {
     const CommentAPI = new Comments();
 
