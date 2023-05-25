@@ -128,7 +128,7 @@ class Components {
     div.className = 'reservations-div';
     const title = document.createElement('h2');
     title.className = 'reservation-title';
-    title.innerHTML = `Reservations (${this.getReservationCount(reservationArray)})`;
+    title.innerHTML = `Reservations (${reservationCounter.getReservationCount(reservationArray)})`;
 
     div.appendChild(title);
     if (reservationArray.error) {
@@ -146,7 +146,7 @@ class Components {
 
       const startDate = new Date(reservation.date_start);
       const endDate = new Date(reservation.date_end);
-      
+
       li.textContent = `${startDate.getMonth()+1}/${startDate.getDate()}/${startDate.getFullYear()} 
         - ${endDate.getMonth()+1}/${endDate.getDate()}/${endDate.getFullYear()} by ${reservation.username}`;
       ul.appendChild(li);
@@ -168,11 +168,6 @@ class Components {
         throw error;
       });
   };
-
-  getReservationCount = (resulvations) => {
-    const TotalItems = (Array.isArray(resulvations) ? resulvations.length : '0');
-    return TotalItems;
-  }
 }
 
 export default new Components();
