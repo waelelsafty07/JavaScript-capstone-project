@@ -6,6 +6,7 @@ const AddComment = () => {
 
   if (commentForm) {
     const submit = commentForm.querySelector('button');
+
     submit.addEventListener('click', async (event) => {
       event.preventDefault();
       const name = commentForm.querySelector('#comment-name').value;
