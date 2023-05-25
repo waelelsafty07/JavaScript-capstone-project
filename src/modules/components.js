@@ -124,7 +124,7 @@ class Components {
 
   reservations = (reservationArray = null) => {
     const div = document.createElement('div');
-    div.className = 'reservations-div'
+    div.className = 'reservations-div';
     const title = document.createElement('h2');
     title.className = 'reservation-title';
     title.innerHTML = `Reservations (${this.getReservationCount(reservationArray)})`;
