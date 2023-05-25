@@ -3,6 +3,7 @@ import Comments from './comments.js';
 
 const displayComments = (itemId) => {
   const commentsSection = document.querySelector('#comments-section');
+  commentsSection.textContent = '';
   if (commentsSection) {
     const CommentAPI = new Comments();
 

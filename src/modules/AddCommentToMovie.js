@@ -1,4 +1,5 @@
 import Comments from './comments.js';
+import displayComments from './displayComments.js';
 
 const AddComment = () => {
   const commentForm = document.querySelector('#comment-form');
@@ -17,6 +18,8 @@ const AddComment = () => {
         comment: msg,
       };
       await CommentAPI.addcomments(body);
+      commentForm.reset();
+      displayComments(submit.id);
     });
   }
 };

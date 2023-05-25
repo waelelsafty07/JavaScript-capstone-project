@@ -77,6 +77,7 @@ class API {
       popupDiv.classList.add('popup');
       comments.classList.add('d-flex', 'flex-d-column');
       commentForm.classList.add('d-flex', 'flex-d-column');
+      commentBtn.className = 'comment-btn';
 
       commentsTitle.textContent = 'Comments';
       addCommentsTitle.textContent = 'Add Comment';

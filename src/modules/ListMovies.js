@@ -124,7 +124,6 @@ const CommentPopup = async (event) => {
   const movieId = movie.getAttribute('id-movie');
   // Perform the desired action when the comment button is clicked
   const api = new API('https://api.tvmaze.com/shows');
-
   await api.displayShow(parseInt(movieId, 10));
   AddComment();
 };
