@@ -263,3 +263,7 @@ footer > span {
 .date-input {
   padding: 0.5rem;
 }
+
+.reservation-title {
+  margin-top: 2rem;
+}
