@@ -151,7 +151,6 @@ const displayMovies = async () => {
     const likesArray = await Likes.getlikes();
     diplayCountItem(moviesList.parentNode, movies);
     movies.forEach(async (movie) => {
-      moviesList.appendChild(createMovies(movie));
       reservation.reservationButtonEventListner();
       const movieElement = createMovies(movie, likesArray);
       const commentButton = movieElement.querySelector('.btn-comment');
@@ -165,6 +164,4 @@ const displayMovies = async () => {
   }
 };
 
-window.onload = async () => {
-  await displayMovies();
-};
+export default displayMovies
