@@ -40,7 +40,7 @@ class Reservation {
       event.preventDefault();
       const name = event.target[0].value;
       const startDate = event.target[1].value;
-      const endtDate = event.target[1].value;
+      const endtDate = event.target[2].value;
       this.saveReservation(movieId.getAttribute('movieid'), name, startDate, endtDate);
       form.reset();
     });
