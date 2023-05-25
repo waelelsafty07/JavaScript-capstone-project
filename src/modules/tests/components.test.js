@@ -6,43 +6,43 @@ describe('Components', () => {
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'test'
+        username: 'test',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'pappi'
+        username: 'pappi',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'felix'
+        username: 'felix',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'Nono'
+        username: 'Nono',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'patrick'
+        username: 'patrick',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'testg'
+        username: 'testg',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'pascal'
+        username: 'pascal',
       },
       {
         date_start: '2023-05-25',
         date_end: '2023-05-25',
-        username: 'fezzopro'
-      }
+        username: 'fezzopro',
+      },
     ];
     const result = reservationCounter.getReservationCount(reservations);
     expect(result).toEqual(8);
