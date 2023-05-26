@@ -91,7 +91,7 @@ li {
 
 .movies-item .movie {
   flex: 0 0 auto;
-  width: 33.333333%;
+  width: 20%;
   padding: 0.5rem;
 }
 
@@ -166,7 +166,6 @@ textarea {
 
 button {
   padding: 1rem;
-  margin: 1rem;
 }
 
 footer > span {
