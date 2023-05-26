@@ -52,7 +52,7 @@ const createMovies = (movieDetails, likesArray) => {
     className:
       'd-flex align-items-center justify-content-space-between movies-title',
   });
-  const h2 = createElement({ tag: 'h1' });
+  const h2 = createElement({ tag: 'h2' });
   createTextNode(h2, movieDetails.name);
   const iconbutton = createElement({
     tag: 'a',
