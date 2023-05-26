@@ -36,7 +36,6 @@ const displayShow = async (itemId) => {
     bodyPopup.className = 'col-4 display-comments';
     overlay.classList.add('overlay');
     popupDiv.classList.add('d-flex');
-    // popupDiv.classList.add('flex-d-column');
     popupDiv.classList.add('justify-content-center');
 
     close.classList.add('fa-solid', 'fa-xmark', 'fa-2xl', 'close');
