@@ -46,7 +46,7 @@ After you're finished please remove all the comments and instructions!
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [👥 Author <a name="authors">Wael Elsafty</a>](#-author-wael-elsafty)
+  - [👥 Authors](#-authors)
   - [🔭 Future Features <a name="future-features"></a>](#-future-features-)
   - [🤝 Contributing <a name="contributing"></a>](#-contributing-)
   - [⭐️ Show your support <a name="support"></a>](#️-show-your-support-)
@@ -152,7 +152,7 @@ For Run server devlopment
 
 <!-- AUTHORS -->
 
-## 👥 Author <a name="authors">Wael Elsafty</a>
+## 👥 Authors
 
 👤 **Wael Elsafty**
 
