@@ -36,22 +36,22 @@ After you're finished please remove all the comments and instructions!
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[TV-Shows\] ](#-tv-shows-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
+- [📖 [TV-Shows] <a name="about-project"></a>](#-tv-shows-)
+  - [🛠 Built With <a name="HTML and CSS"></a>](#-built-with-)
+    - [Tech Stack <a name="Front end"></a>](#tech-stack-)
     - [Key Features](#key-features)
-  - [🚀 Live Demo ](#-live-demo-)
-  - [💻 Getting Started ](#-getting-started-)
+  - [🚀 Live Demo <a name="https://github.com/waelelsafty07/JavaScript-capstone-project/dist"></a>](#-live-demo-)
+  - [💻 Getting Started <a name="getting-started"></a>](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
-  - [👥 Author Wael Elsafty](#-author-wael-elsafty)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+  - [👥 Author <a name="authors">Wael Elsafty</a>](#-author-wael-elsafty)
+  - [🔭 Future Features <a name="future-features"></a>](#-future-features-)
+  - [🤝 Contributing <a name="contributing"></a>](#-contributing-)
+  - [⭐️ Show your support <a name="support"></a>](#️-show-your-support-)
+  - [🙏 Acknowledgments <a name="acknowledgements"></a>](#-acknowledgments-)
+  - [📝 License <a name="license"></a>](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -80,28 +80,30 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features
 
-- [ ] **[Initialized project setup with Webpack and Jest library.]**
-- [ ] **[Created page header according to the wireframe.]**
-- [ ] **[Created footer according to the wireframe.]**
-- [ ] **[Created the main part of the homepage that keeps the layout from the wireframe given.]**
-- [ ] **[Created a comments popup only the top section displaying details of the selected item]**
-- [ ] **[Create a reservations popup with the top section displaying details of the selected item]**
-- [ ] **[When the page loads, the webapp calls the Involvement API to show the likes for each TV Show and combines them with the data from the base API.]**
-- [ ] **[Display comments for a given Tv Show on the Comments.]**
-- [ ] **[Display reservations for a given Tv Show on the Reservations pop-up.]**
-- [ ] **[Created a feature to add a new like by clicking the Hearts]**
-- [ ] **[Created a feature to add a new comment in the popup]**
-- [ ] **[Created a feature to add a new reservation in the popup]**
-- [ ] **[Created a feature to display the number of TV shows on the Homepage.]**
-- [ ] **[Created a feature to display the number of comments in the popup]**
-- [ ] **[Created a feature to display the number of reservations in the popup]**
+- [x] **[Initialized project setup with Webpack and Jest library.]**
+- [x] **[Created page header according to the wireframe.]**
+- [x] **[Created footer according to the wireframe.]**
+- [x] **[Created the main part of the homepage that keeps the layout from the wireframe given.]**
+- [x] **[Created a comments popup only the top section displaying details of the selected item]**
+- [x] **[Create a reservations popup with the top section displaying details of the selected item]**
+- [x] **[When the page loads, the webapp calls the Involvement API to show the likes for each TV Show and combines them with the data from the base API.]**
+- [x] **[Display comments for a given Tv Show on the Comments.]**
+- [x] **[Display reservations for a given Tv Show on the Reservations pop-up.]**
+- [x] **[Created a feature to add a new like by clicking the Hearts]**
+- [x] **[Created a feature to add a new comment in the popup]**
+- [x] **[Created a feature to add a new reservation in the popup]**
+- [x] **[Created a feature to display the number of TV shows on the Homepage.]**
+- [x] **[Created a feature to display the number of comments in the popup]**
+- [x] **[Created a feature to display the number of reservations in the popup]**
+- [x] **[Deploy The Project]**
 
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="https://github.com/waelelsafty07/JavaScript-capstone-project/dist"></a>
 
-- [[Live Demo Link]Comming Soon ]
+- [[Live Demo Link](https://waelelsafty07.github.io/JavaScript-capstone-project/dist)]
+- [[Demo Video](https://drive.google.com/file/d/1sEcsNaznuEP8NEPCZVsZTzO-ANYi-JY7/view?usp=drive_link)]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,7 +176,6 @@ For Run server devlopment
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Deploy The Project]**
 - [ ] **[Additional Styling, Transitions & Animations]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
