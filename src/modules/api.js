@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 class API {
   constructor(link) {
     this.url = link;

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import API from './api.js';
 import { invo } from './env.js';
 
