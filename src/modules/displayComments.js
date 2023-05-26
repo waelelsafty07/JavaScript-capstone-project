@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import Comments from './comments.js';
 import totalComments from './totalComments.js';
 
