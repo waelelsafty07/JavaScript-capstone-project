@@ -11,8 +11,11 @@ body {
 }
 
 header {
-  margin-top: 2rem;
+  padding: 1.5rem 0;
   gap: 2rem;
+  position: fixed;
+  width: 100%;
+  background-color: #ffff;
 }
 
 .spinner {
@@ -87,6 +90,7 @@ li {
 
 .movies-item {
   width: 90%;
+  margin-top: 2rem;
 }
 
 .movies-item .movie {
@@ -208,6 +212,7 @@ footer > span {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5rem;
 }
 
 .contient-in-backgound {
@@ -292,4 +297,13 @@ footer > span {
 #comment-message:hover,
 .comment-btn:hover {
   border: 4px solid grey;
+}
+
+.counter {
+  position: fixed;
+  padding-bottom: 1rem;
+  background-color: #fff;
+  width: 100%;
+  justify-content: center;
+  display: flex;
 }
