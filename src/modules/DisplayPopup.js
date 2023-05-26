@@ -66,7 +66,7 @@ const displayShow = async (itemId) => {
     commentName.placeholder = 'Your Name';
     commentMsg.placeholder = 'Your Comment';
     popupName.textContent = item.name;
-    popupDet1.textContent = `Genre: ${item.genres}`;
+    popupDet1.textContent = `Genre: ${item.genres[0]}`;
     popupDet2.textContent = `Rating: ${item.rating.average}`;
     popupDet3.textContent = `Language: ${item.language}`;
     popupDet4.textContent = `Runtime: ${item.runtime} min`;
