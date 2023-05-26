@@ -52,7 +52,7 @@ const createMovies = (movieDetails, likesArray) => {
     className:
       'd-flex align-items-center justify-content-space-between movies-title',
   });
-  const h2 = createElement({ tag: 'h1' });
+  const h2 = createElement({ tag: 'h2' });
   createTextNode(h2, movieDetails.name);
   const iconbutton = createElement({
     tag: 'a',
@@ -85,7 +85,7 @@ const createMovies = (movieDetails, likesArray) => {
   // create div with class Group buttons
   const groupBtns = createElement({
     tag: 'div',
-    className: 'd-flex flex-d-column align-items-center group-btns',
+    className: 'd-flex justify-content-space-between group-btns',
   });
   const commentDiv = createElement({
     tag: 'div',
