@@ -1,3 +1,4 @@
+import displayLikeWhenIclick from './displayLikeWhenIclick.js';
 import LIKES from './Likes.js';
 
 const addLike = () => {
@@ -9,6 +10,7 @@ const addLike = () => {
         e.preventDefault();
         const id = btn.getAttribute('id-movie');
         await likeAPI.addLikes(id);
+        displayLikeWhenIclick(btn, id);
       });
     });
   }
