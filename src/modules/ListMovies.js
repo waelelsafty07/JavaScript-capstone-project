@@ -6,6 +6,7 @@ import lazyLoadImages from './lazyLoadImage.js';
 import reservation from './reservation.js';
 import LIKES from './Likes.js';
 import TotalItems from './totalItems.js';
+import displayShow from './DisplayPopup.js';
 
 const createElement = (obj) => {
   const el = document.createElement(obj.tag);
@@ -123,9 +124,7 @@ const CommentPopup = async (event) => {
   const movie = commentButton.closest('.movie');
   const movieId = movie.getAttribute('id-movie');
   // Perform the desired action when the comment button is clicked
-  const api = new API('https://api.tvmaze.com/shows');
-
-  await api.displayShow(parseInt(movieId, 10));
+  await displayShow(parseInt(movieId, 10));
   AddComment();
 };
 
