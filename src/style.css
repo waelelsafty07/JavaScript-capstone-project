@@ -103,6 +103,10 @@ li {
   font-size: 1.3rem;
 }
 
+.movies-item .movie .movies-body .group-btns {
+  gap: 1rem;
+}
+
 .movies-item .movie .movies-body .group-btns > div {
   margin: 1rem 0 0;
 }

@@ -85,7 +85,7 @@ const createMovies = (movieDetails, likesArray) => {
   // create div with class Group buttons
   const groupBtns = createElement({
     tag: 'div',
-    className: 'd-flex flex-d-column align-items-center group-btns',
+    className: 'd-flex justify-content-space-between group-btns',
   });
   const commentDiv = createElement({
     tag: 'div',
