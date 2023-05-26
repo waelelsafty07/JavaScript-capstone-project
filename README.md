@@ -80,7 +80,21 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features
 
-- **[Initialized project setup with Webpack and Jest library.]**
+- [ ] **[Initialized project setup with Webpack and Jest library.]**
+- [ ] **[Create page header according to the wireframe.]**
+- [ ] **[Create footer according to the wireframe.]**
+- [ ] **[Create the main part of the homepage that keeps the layout from the wireframe.]**
+- [ ] **[Create a comments popup only with the top section (displaying details of the selected item).]**
+- [ ] **[Create a reservations popup only with the top section (displaying details of the selected item).]**
+- [ ] **[When the page loads, the webapp the Involvement API to show the item likes and combines them with the data from the base API.]**
+- [ ] **[Display comments for a given item on the Comments.]**
+- [ ] **[Display reservations for a given item on the Reservations pop-up.]**
+- [ ] **[Create feature: add new like.]**
+- [ ] **[Create feature: add new comment.]**
+- [ ] **[Create feature: add new reservation.]**
+- [ ] **[Add all items counter on the Homepage.]**
+- [ ] **[Add comments counter.]**
+- [ ] **[Add reservations counter.]**
 
 
 <!-- LIVE DEMO -->
@@ -163,20 +177,7 @@ For Run server devlopment
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Create page header according to the wireframe.]**
-- [ ] **[Create footer according to the wireframe.]**
-- [ ] **[Create the main part of the homepage that keeps the layout from the wireframe.]**
-- [ ] **[Create a comments popup only with the top section (displaying details of the selected item).]**
-- [ ] **[Create a reservations popup only with the top section (displaying details of the selected item).]**
-- [ ] **[When the page loads, the webapp the Involvement API to show the item likes and combines them with the data from the base API.]**
-- [ ] **[Display comments for a given item on the Comments.]**
-- [ ] **[Display reservations for a given item on the Reservations pop-up.]**
-- [ ] **[Create feature: add new like.]**
-- [ ] **[Create feature: add new comment.]**
-- [ ] **[Create feature: add new reservation.]**
-- [ ] **[Add all items counter on the Homepage.]**
-- [ ] **[Add comments counter.]**
-- [ ] **[Add reservations counter.]**
+- [ ] **[Deploy The Ploject.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
